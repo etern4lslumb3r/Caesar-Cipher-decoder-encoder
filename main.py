@@ -93,7 +93,7 @@ Input: """))
                 break
             print("\nPossibilities: \n")
             for index, i in enumerate(decode_text(input_text)):
-                print(i +f"            [Shift: {index}]" +"\n"+ Style.RESET_ALL)
+                print(Fore.YELLOW+f"[Shift: {index}]:  "+Style.RESET_ALL + i +"\n"+ Style.RESET_ALL)
             input("\n[Press Enter to continue]")
         elif mode == 3:
             quit("Ended")
