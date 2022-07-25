@@ -71,7 +71,7 @@ Input: """))
                     shift = int(
                         input(Fore.CYAN + "Shift text by: " + Style.RESET_ALL))
                     if shift > 26:
-                        print("Input a number less than 26")
+                        print(Fore.RED + "\nInput a number less than 26\n" + Style.RESET_ALL)
                         continue
                     else:
                         break
