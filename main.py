@@ -60,7 +60,7 @@ Input: """))
 
         if mode == 1:
             while True:
-                input_text = input(Fore.CYAN + '\nEncode text: ' +
+                input_text = input(Fore.CYAN + '\nEncode text:  ' +
                                    Style.RESET_ALL)
                 if len(input_text) == 0:
                     print(Fore.RED + "Input valid input." + Style.RESET_ALL)
