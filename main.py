@@ -4,12 +4,12 @@ from typing import List
 from colorama import Style, Fore
 import replit
 
+
 replit.clear()
 
 class CaesarCipher:
     characters_lower = string.ascii_lowercase
     characters_upper = string.ascii_uppercase
-
 
     def encode_text(self,s: str, shift: int) -> str:
         output = ""
@@ -40,7 +40,6 @@ class CaesarCipher:
             output = self.encode_text(s, shift)
             outputs.append(output)
         return outputs
-
 
 
 if __name__ == "__main__":
