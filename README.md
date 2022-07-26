@@ -3,9 +3,9 @@ This program includes an encoder/decoder to experiment with Caesar Cipher encode
 
 # How to use
 
-= When first running the program, type in the alphabet that you want to use.
+- When first running the program, type in the alphabet that you want to use.
   - It has to be in order for the program to work as intended.
-  = Duplicates are filtered out.
+  - Duplicates are filtered out.
 
 Follow the prompts.
 - To *encode*, input `1`.
