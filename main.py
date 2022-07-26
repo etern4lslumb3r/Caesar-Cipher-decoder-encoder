@@ -15,7 +15,7 @@ class CaesarCipher:
         for char in alphabet:
             if char not in self.alphabet_set:
                 self.alphabet_set.add(char)
-                self.alphabet_new += char
+                self.alphabet_new += char.strip()
             elif char in self.alphabet_set:
                 self.duplicates.append(char)
         self.characters_lower = self.alphabet_new.lower()
