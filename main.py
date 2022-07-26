@@ -20,18 +20,14 @@ class CaesarCipher:
             elif current_letter in self.characters_lower:
                 for char_index in range(len(self.characters_lower)):
                     if current_letter == self.characters_lower[char_index]:
-                        shift_amount = char_index + shift
-                        if shift_amount > len(self.characters_lower) - 1:
-                            shift_amount = shift_amount - len(self.characters_lower)
+                        shift_amount = (char_index + shift) % len(self.characters_lower)
                         new_char = self.characters_lower[shift_amount]
                         output += new_char
 
             elif current_letter in self.characters_upper:
                 for char_index in range(len(self.characters_upper)):
                     if current_letter == self.characters_upper[char_index]:
-                        shift_amount = char_index + shift
-                        if shift_amount > len(self.characters_lower) - 1:
-                            shift_amount = shift_amount - len(self.characters_lower)
+                        shift_amount = (char_index + shift) % len(self.characters_upper)
                         new_char = self.characters_upper[shift_amount]
                         output += new_char
 
@@ -72,11 +68,7 @@ if __name__ == "__main__":
                 try:
                     shift = int(
                         input(Fore.CYAN + "Shift text by: " + Style.RESET_ALL))
-                    if shift > len(cs.characters_lower):
-                        print(Fore.RED + f"\nInput a number less than {len(cs.characters_lower)}\n" + Style.RESET_ALL)
-                        continue
-                    else:
-                        break
+                    break
                 except:
                     print(Fore.RED + "Input valid input" + Style.RESET_ALL)
                     continue
