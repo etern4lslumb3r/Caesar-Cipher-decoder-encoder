@@ -11,13 +11,13 @@ class CaesarCipher:
     def __init__(self, alphabet:str):
         self.alphabet_set = set()
         self.alphabet_new = ""
+        self.duplicates = []
         for char in alphabet:
             if char not in self.alphabet_set:
                 self.alphabet_set.add(char)
                 self.alphabet_new += char
             elif char in self.alphabet_set:
-                print(Fore.RED + "Duplicate removed: {}".format(char) + Style.RESET_ALL)
-        print(Fore.CYAN + "Current Alphabet: " + self.alphabet_new + Style.RESET_ALL +"\n")
+                self.duplicates.append(char)
         self.characters_lower = self.alphabet_new.lower()
         self.characters_upper = self.alphabet_new.upper()
 
@@ -55,6 +55,10 @@ class CaesarCipher:
 if __name__ == "__main__":
     alphabet = input("Type in the alphabet being used in the plaintext: ")
     cs = CaesarCipher(alphabet=alphabet)
+    for duplicate in cs.duplicates:
+        print(Fore.RED + "Duplicate removed: {}".format(duplicate) +Style.RESET_ALL)
+    print(Fore.CYAN + "Current Alphabet: " + cs.alphabet_new + Style.RESET_ALL +"\n")
+
     while True:
         try:
             print("What would you like to do?")
