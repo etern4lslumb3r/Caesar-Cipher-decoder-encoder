@@ -9,7 +9,7 @@ replit.clear()
 
 class CaesarCipher:
     characters_lower = string.ascii_lowercase
-    characters_upper = string.ascii_uppercase
+    characters_upper = characters_lower.upper()
 
     def encode_text(self,s: str, shift: int) -> str:
         output = ""
