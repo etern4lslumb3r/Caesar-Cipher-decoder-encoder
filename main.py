@@ -38,7 +38,7 @@ def encode_text(s: str, shift: int) -> str:
 
 def decode_text(s: str) -> List[str]:
     outputs = []
-    for shift in range(26):
+    for shift in reversed(range(26)):
       output = encode_text(s, shift)
       outputs.append(output)
     return outputs
@@ -46,14 +46,11 @@ def decode_text(s: str) -> List[str]:
 if __name__ == "__main__":
     while True:
         try:
-            mode = int(
-                input("""
-What would you like to do?
-1. Encode
-2. Decode
-3. Quit
-
-Input: """))
+            print("What would you like to do?")
+            print(Fore.CYAN + "1. Encode" + Style.RESET_ALL)
+            print(Fore.YELLOW + "2. Decode" + Style.RESET_ALL)
+            print(Fore.RED + "3. Quit" + Style.RESET_ALL)
+            mode = int(input("\nInput: "))
         except:
             print(Fore.RED + "Input valid input." + Style.RESET_ALL)
             continue
@@ -93,10 +90,12 @@ Input: """))
                 break
             print("\nPossibilities: \n")
             for index, i in enumerate(decode_text(input_text)):
-                print(Fore.YELLOW+f"[Shift: {index}]:  "+Style.RESET_ALL + i +"\n"+ Style.RESET_ALL)
+                if index+1 == 26:
+                    continue
+                print(Fore.YELLOW+f"[Shift: {index+1}]:  "+Style.RESET_ALL + i +"\n"+ Style.RESET_ALL)
             input("\n[Press Enter to continue]")
         elif mode == 3:
-            quit("Ended")
+            quit(Fore.RED+"\nEnded\n"+Style.RESET_ALL)
 
         if mode != 1 or mode != 2 or mode != 3:
             continue
